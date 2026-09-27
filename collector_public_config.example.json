@@ -1,4 +1,3 @@
 {
-  "endpoint": "https://wowquestvoice-collector.wowquestvoice-ko.workers.dev",
-  "uploadToken": ""
+  "endpoint": "https://wowquestvoice-collector.wowquestvoice-ko.workers.dev"
 }

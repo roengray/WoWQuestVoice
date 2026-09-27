@@ -1,5 +1,7 @@
 const MAX_BODY_BYTES = 512 * 1024;
 const MAX_RECORDS = 100;
+const PUBLIC_REQUESTS_PER_DAY = 500;
+const PUBLIC_RECORDS_PER_DAY = 20000;
 const VALID_SECTIONS = new Set(["accept", "progress", "complete"]);
 const INSTALLER_KEY = "releases/WoWQuestVoiceSetup.exe";
 
@@ -69,6 +71,59 @@ function bearerToken(request) {
   return value.startsWith("Bearer ") ? value.slice(7) : "";
 }
 
+function constantTimeEqual(left, right) {
+  const a = new TextEncoder().encode(left || "");
+  const b = new TextEncoder().encode(right || "");
+  if (a.length !== b.length) return false;
+  let difference = 0;
+  for (let index = 0; index < a.length; index += 1) {
+    difference |= a[index] ^ b[index];
+  }
+  return difference === 0;
+}
+
+async function hmacHex(secret, value) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const digest = await crypto.subtle.sign("HMAC", key, encoder.encode(value));
+  return [...new Uint8Array(digest)]
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function enforcePublicRateLimit(request, env, recordCount) {
+  if (!env.ABUSE_SALT) {
+    return { ok: false, response: json({ ok: false, error: "collector_not_configured" }, 503) };
+  }
+  const address = request.headers.get("CF-Connecting-IP") || "unknown";
+  const now = Math.floor(Date.now() / 1000);
+  const windowStart = Math.floor(now / 86400) * 86400;
+  const bucket = await hmacHex(env.ABUSE_SALT, `${windowStart}\n${address}`);
+  await env.DB.prepare(
+    "DELETE FROM upload_rate_limits WHERE expires_at < ?",
+  ).bind(now).run();
+  const row = await env.DB.prepare(`
+    INSERT INTO upload_rate_limits
+      (bucket, window_start, request_count, record_count, expires_at)
+    VALUES (?, ?, 1, ?, ?)
+    ON CONFLICT(bucket) DO UPDATE SET
+      request_count = request_count + 1,
+      record_count = record_count + excluded.record_count
+    RETURNING request_count AS requestCount, record_count AS recordCount
+  `).bind(bucket, windowStart, recordCount, windowStart + 172800).first();
+  if ((row?.requestCount || 0) > PUBLIC_REQUESTS_PER_DAY ||
+      (row?.recordCount || 0) > PUBLIC_RECORDS_PER_DAY) {
+    return { ok: false, response: json({ ok: false, error: "rate_limited" }, 429) };
+  }
+  return { ok: true };
+}
+
 function cleanString(value, maxLength) {
   if (typeof value !== "string") return "";
   return value.replace(/\u0000/g, "").trim().slice(0, maxLength);
@@ -83,10 +138,6 @@ async function sha256Hex(value) {
 }
 
 async function receiveBatch(request, env) {
-  if (!env.UPLOAD_TOKEN || bearerToken(request) !== env.UPLOAD_TOKEN) {
-    return json({ ok: false, error: "unauthorized" }, 401);
-  }
-
   const contentLength = Number(request.headers.get("content-length") || 0);
   if (contentLength > MAX_BODY_BYTES) {
     return json({ ok: false, error: "payload_too_large" }, 413);
@@ -109,6 +160,15 @@ async function receiveBatch(request, env) {
   }
   if (payload.records.length < 1 || payload.records.length > MAX_RECORDS) {
     return json({ ok: false, error: "invalid_record_count" }, 400);
+  }
+
+  const suppliedToken = bearerToken(request);
+  const trustedClient = Boolean(
+    env.UPLOAD_TOKEN && suppliedToken && constantTimeEqual(suppliedToken, env.UPLOAD_TOKEN),
+  );
+  if (!trustedClient) {
+    const limit = await enforcePublicRateLimit(request, env, payload.records.length);
+    if (!limit.ok) return limit.response;
   }
 
   const locale = cleanString(payload.locale, 12);

@@ -55,6 +55,8 @@ def configure(args: argparse.Namespace) -> dict:
         config["endpoint"] = str(public["endpoint"])
     if public.get("uploadToken"):
         config["uploadToken"] = str(public["uploadToken"])
+    else:
+        config.pop("uploadToken", None)
     if args.game_path:
         config["gamePath"] = os.path.abspath(os.path.expandvars(args.game_path))
     if args.enable_upload:

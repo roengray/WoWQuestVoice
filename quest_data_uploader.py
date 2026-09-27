@@ -75,7 +75,7 @@ def infer_game_path() -> Path:
 
 
 def public_config() -> dict[str, Any]:
-    return load_json(PUBLIC_CONFIG_PATH, {"endpoint": "", "uploadToken": ""})
+    return load_json(PUBLIC_CONFIG_PATH, {"endpoint": ""})
 
 
 def default_config() -> dict[str, Any]:
@@ -193,8 +193,6 @@ def upload_once(config: dict[str, Any], *, dry_run: bool = False) -> tuple[int, 
     if not endpoint.startswith("https://") and not endpoint.startswith("http://127.0.0.1"):
         raise RuntimeError("a valid HTTPS collector endpoint is required")
     token = str(config.get("uploadToken") or "")
-    if not token:
-        raise RuntimeError("upload token is missing")
 
     uploaded = 0
     for offset in range(0, len(pending), 100):
@@ -206,14 +204,18 @@ def upload_once(config: dict[str, Any], *, dry_run: bool = False) -> tuple[int, 
             "addonVersion": addon_version(game_path),
             "records": [{key: value for key, value in row.items() if key != "localHash"} for row in batch],
         }
+        headers = {
+            "Content-Type": "application/json",
+            "User-Agent": "WoWQuestVoice-Collector/0.1",
+        }
+        # Compatibility with private/self-hosted collectors and earlier builds.
+        # The official public installer intentionally ships without a secret.
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
         request = urllib.request.Request(
             endpoint + "/v1/quests",
             data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Content-Type": "application/json",
-                "User-Agent": "WoWQuestVoice-Collector/0.1",
-            },
+            headers=headers,
             method="POST",
         )
         with urllib.request.urlopen(request, timeout=30, context=tls_context()) as response:

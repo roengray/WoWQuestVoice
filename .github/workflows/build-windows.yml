@@ -23,12 +23,9 @@ jobs:
         run: python -m pip install -r requirements-build.txt
       - name: Create public runtime configuration
         shell: pwsh
-        env:
-          WQV_UPLOAD_TOKEN: ${{ secrets.WQV_UPLOAD_TOKEN }}
         run: |
           $config = @{
             endpoint = 'https://wowquestvoice-collector.wowquestvoice-ko.workers.dev'
-            uploadToken = $env:WQV_UPLOAD_TOKEN
           }
           $config | ConvertTo-Json | Set-Content -Encoding UTF8 collector_public_config.json
       - name: Install verified Inno Setup compiler
