@@ -1,0 +1,50 @@
+name: Build Windows installer
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install Python build dependencies
+        run: python -m pip install -r requirements-build.txt
+      - name: Create public runtime configuration
+        shell: pwsh
+        env:
+          WQV_UPLOAD_TOKEN: ${{ secrets.WQV_UPLOAD_TOKEN }}
+        run: |
+          $config = @{
+            endpoint = 'https://wowquestvoice-collector.wowquestvoice-ko.workers.dev'
+            uploadToken = $env:WQV_UPLOAD_TOKEN
+          }
+          $config | ConvertTo-Json | Set-Content -Encoding UTF8 collector_public_config.json
+      - name: Install verified Inno Setup compiler
+        shell: pwsh
+        run: |
+          $url = 'https://github.com/jrsoftware/issrc/releases/download/is-6_7_3/innosetup-6.7.3.exe'
+          $installer = Join-Path $env:RUNNER_TEMP 'innosetup.exe'
+          Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $installer
+          $expected = '9C73C3BAE7ED48D44112A0F48E66742C00090BDB5BEF71D9D3C056C66E97B732'
+          if ((Get-FileHash -Algorithm SHA256 $installer).Hash -ne $expected) { throw 'Inno Setup hash mismatch' }
+          if ((Get-AuthenticodeSignature $installer).Status -ne 'Valid') { throw 'Inno Setup signature invalid' }
+          Start-Process $installer -ArgumentList @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/CURRENTUSER',('/DIR=' + (Join-Path $pwd 'tools\InnoSetup'))) -Wait
+      - name: Build installer
+        shell: pwsh
+        run: .\build_installer.ps1 -OutputName WoWQuestVoiceSetup
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WoWQuestVoiceSetup
+          path: release/installer/WoWQuestVoiceSetup.exe
+          if-no-files-found: error

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv*/
+build/
+release/
+tools/
+node_modules/
+.wrangler/
+.dev.vars
+.secrets*.json
+collector_public_config.json
+WoWQuestVoice/sounds/
+*.log
+*.part
+*.zip
+*.exe
