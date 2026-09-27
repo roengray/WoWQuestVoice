@@ -1,5 +1,7 @@
 # WoWQuestVoice
 
+[![Build Windows installer](https://github.com/roengray/WoWQuestVoice/actions/workflows/build-windows.yml/badge.svg)](https://github.com/roengray/WoWQuestVoice/actions/workflows/build-windows.yml)
+
 WoWQuestVoice는 World of Warcraft Classic Beta의 한국어 퀘스트 본문을 게임 안에서 음성으로 재생하는 애드온입니다. 퀘스트 창의 재생·정지 버튼, 재생 중 음악과 효과음 볼륨 조정, 퀘스트 자동 수락·보고 선택 기능을 제공합니다.
 
 Windows 설치 프로그램은 애드온과 백그라운드 업데이터만 포함합니다. 약 316MB의 음성 데이터는 첫 실행 뒤 두 묶음으로 내려받고, 이후에는 바뀐 묶음만 업데이트합니다.
