@@ -31,11 +31,11 @@ Copy-Item collector_public_config.example.json collector_public_config.json
 .\build_installer.ps1
 ```
 
-생성된 `release/installer/WoWQuestVoiceSetup-UNSIGNED-QA.exe`는 서명 전 검사용 파일입니다. 일반 사용자 배포에는 서명된 릴리스만 사용합니다.
+생성된 `release/installer/WoWQuestVoiceSetup-UNSIGNED-QA.exe`는 디지털 서명이 없는 빌드입니다. Windows에서 게시자 확인 또는 SmartScreen 경고가 표시될 수 있습니다. 서명된 설치 프로그램을 제공하기 전까지는 GitHub 릴리스의 ZIP 파일을 우선 사용하고, 실행 파일을 배포할 때는 함께 공개한 SHA-256 값을 확인합니다.
 
-## Code signing policy
+## 코드 서명 상태
 
-Free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/). 역할, 검토와 승인 절차는 [Code signing policy](CODE_SIGNING_POLICY.md)에 설명되어 있습니다.
+현재 프로젝트에는 코드 서명 인증서가 없으며 설치 프로그램은 서명되지 않았습니다. 빌드와 검증 절차는 [코드 서명 정책](CODE_SIGNING_POLICY.md)에 설명되어 있습니다.
 
 ## 라이선스
 

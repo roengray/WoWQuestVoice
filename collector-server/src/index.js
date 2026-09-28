@@ -33,8 +33,8 @@ async function landingPage(env) {
     ? '<a class="button" href="/download">WoWQuestVoice 다운로드</a>'
     : '<span class="button disabled">설치 파일 준비 중</span>';
   const downloadNote = installer
-    ? `설치 파일 ${(installer.size / 1024 / 1024).toFixed(1)}MB · 음성 데이터는 설치 뒤 자동 다운로드`
-    : "서명된 설치 파일을 준비하고 있습니다.";
+    ? `설치 파일 ${(installer.size / 1024 / 1024).toFixed(1)}MB · 음성 데이터는 설치 뒤 자동 다운로드 · Windows 게시자 확인 경고가 표시될 수 있습니다.`
+    : "설치 파일을 준비하고 있습니다. 현재 공개 베타에는 디지털 서명이 없습니다.";
   return html(`<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WoWQuestVoice</title><meta name="description" content="월드 오브 워크래프트 한국어 퀘스트 음성 애드온">
