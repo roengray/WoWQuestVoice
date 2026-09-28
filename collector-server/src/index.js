@@ -4,6 +4,8 @@ const PUBLIC_REQUESTS_PER_DAY = 500;
 const PUBLIC_RECORDS_PER_DAY = 20000;
 const VALID_SECTIONS = new Set(["accept", "progress", "complete"]);
 const INSTALLER_KEY = "releases/WoWQuestVoiceSetup.exe";
+const INSTALLER_VERSION = "0.10.5";
+const INSTALLER_SHA256 = "F21FDC6FE13B0DF2933CA088DDA0397D882233E0E37BE3ED9A60C1B29479F945";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -30,16 +32,16 @@ function html(body, status = 200) {
 async function landingPage(env) {
   const installer = await env.AUDIO.head(INSTALLER_KEY);
   const download = installer
-    ? '<a class="button" href="/download">WoWQuestVoice 다운로드</a>'
+    ? `<a class="button" href="/download?v=${INSTALLER_VERSION}">WoWQuestVoice 다운로드</a>`
     : '<span class="button disabled">설치 파일 준비 중</span>';
   const downloadNote = installer
-    ? `설치 파일 ${(installer.size / 1024 / 1024).toFixed(1)}MB · 음성 데이터는 설치 뒤 자동 다운로드 · Windows 게시자 확인 경고가 표시될 수 있습니다.`
+    ? `설치 파일 v${INSTALLER_VERSION} · ${(installer.size / 1024 / 1024).toFixed(1)}MB · 음성 데이터는 설치 뒤 자동 다운로드 · Windows 게시자 확인 경고가 표시될 수 있습니다.<br>SHA-256: <code>${INSTALLER_SHA256}</code>`
     : "설치 파일을 준비하고 있습니다. 현재 공개 베타에는 디지털 서명이 없습니다.";
   return html(`<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WoWQuestVoice</title><meta name="description" content="월드 오브 워크래프트 한국어 퀘스트 음성 애드온">
 <style>
-:root{color-scheme:dark;--bg:#0b1018;--panel:#151d29;--line:#2a394c;--text:#f5f7fa;--muted:#9eb0c5;--blue:#42a5ff;--gold:#efb84a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#172c47 0,transparent 42%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}main{max-width:960px;margin:auto;padding:72px 24px}.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.08em}h1{font-size:clamp(42px,8vw,76px);line-height:1.05;margin:12px 0 22px}h2{font-size:25px;margin:0 0 10px}.lead{max-width:720px;color:#cad5e2;font-size:20px}.actions{margin:34px 0 10px}.button{display:inline-block;background:var(--blue);color:#06111d;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:9px}.button.disabled{background:#4c5968;color:#c8d0d9}.note{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:62px}.card{background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:14px;padding:24px}.card p{color:var(--muted);margin:0}.privacy{margin-top:42px;padding-top:28px;border-top:1px solid var(--line);color:var(--muted)}footer{margin-top:54px;color:#73869b;font-size:13px}@media(max-width:720px){main{padding-top:48px}.grid{grid-template-columns:1fr;margin-top:44px}}
+:root{color-scheme:dark;--bg:#0b1018;--panel:#151d29;--line:#2a394c;--text:#f5f7fa;--muted:#9eb0c5;--blue:#42a5ff;--gold:#efb84a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#172c47 0,transparent 42%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}main{max-width:960px;margin:auto;padding:72px 24px}.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.08em}h1{font-size:clamp(42px,8vw,76px);line-height:1.05;margin:12px 0 22px}h2{font-size:25px;margin:0 0 10px}.lead{max-width:720px;color:#cad5e2;font-size:20px}.actions{margin:34px 0 10px}.button{display:inline-block;background:var(--blue);color:#06111d;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:9px}.button.disabled{background:#4c5968;color:#c8d0d9}.note{color:var(--muted);font-size:14px}.note code{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:62px}.card{background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:14px;padding:24px}.card p{color:var(--muted);margin:0}.privacy{margin-top:42px;padding-top:28px;border-top:1px solid var(--line);color:var(--muted)}footer{margin-top:54px;color:#73869b;font-size:13px}@media(max-width:720px){main{padding-top:48px}.grid{grid-template-columns:1fr;margin-top:44px}}
 </style></head><body><main>
 <div class="eyebrow">한국어 퀘스트 보이스오버</div><h1>WoWQuestVoice</h1>
 <p class="lead">퀘스트 창에서 바로 한국어 음성을 듣고, 재생 중에는 게임 음악과 효과음을 자동으로 낮춥니다.</p>
