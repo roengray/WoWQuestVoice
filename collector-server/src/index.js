@@ -3,9 +3,10 @@ const MAX_RECORDS = 100;
 const PUBLIC_REQUESTS_PER_DAY = 500;
 const PUBLIC_RECORDS_PER_DAY = 20000;
 const VALID_SECTIONS = new Set(["accept", "progress", "complete"]);
-const INSTALLER_KEY = "releases/WoWQuestVoiceSetup.exe";
-const INSTALLER_VERSION = "0.10.5";
-const INSTALLER_SHA256 = "F21FDC6FE13B0DF2933CA088DDA0397D882233E0E37BE3ED9A60C1B29479F945";
+const DOWNLOAD_KEY = "releases/WoWQuestVoice-v0.10.5-addon.zip";
+const DOWNLOAD_FILENAME = "WoWQuestVoice-v0.10.5-addon.zip";
+const DOWNLOAD_VERSION = "0.10.5";
+const DOWNLOAD_SHA256 = "2832437ABDB156F5CBBA8B1B0F49BD272D178FE88EB7E7649F971EB69CEC0F8C";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -30,13 +31,13 @@ function html(body, status = 200) {
 }
 
 async function landingPage(env) {
-  const installer = await env.AUDIO.head(INSTALLER_KEY);
-  const download = installer
-    ? `<a class="button" href="/download?v=${INSTALLER_VERSION}">WoWQuestVoice 다운로드</a>`
-    : '<span class="button disabled">설치 파일 준비 중</span>';
-  const downloadNote = installer
-    ? `설치 파일 v${INSTALLER_VERSION} · ${(installer.size / 1024 / 1024).toFixed(1)}MB · 음성 데이터는 설치 뒤 자동 다운로드 · Windows 게시자 확인 경고가 표시될 수 있습니다.<br>SHA-256: <code>${INSTALLER_SHA256}</code>`
-    : "설치 파일을 준비하고 있습니다. 현재 공개 베타에는 디지털 서명이 없습니다.";
+  const archive = await env.AUDIO.head(DOWNLOAD_KEY);
+  const download = archive
+    ? `<a class="button" href="/download?v=${DOWNLOAD_VERSION}">애드온 ZIP 다운로드</a>`
+    : '<span class="button disabled">ZIP 파일 준비 중</span>';
+  const downloadNote = archive
+    ? `애드온 전체 ZIP v${DOWNLOAD_VERSION} · ${(archive.size / 1024 / 1024).toFixed(1)}MB · 실행 파일 없음 · 음성 1,639개 포함<br>SHA-256: <code>${DOWNLOAD_SHA256}</code>`
+    : "애드온 ZIP 파일을 준비하고 있습니다.";
   return html(`<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WoWQuestVoice</title><meta name="description" content="월드 오브 워크래프트 한국어 퀘스트 음성 애드온">
@@ -48,21 +49,21 @@ async function landingPage(env) {
 <div class="actions">${download}</div><p class="note">${downloadNote}</p>
 <section class="grid">
   <article class="card"><h2>게임 안에서 바로</h2><p>퀘스트 창의 재생·정지 버튼으로 음성을 조작합니다.</p></article>
-  <article class="card"><h2>자동 업데이트</h2><p>처음 한 번 음성 데이터를 받고 이후에는 바뀐 묶음만 내려받습니다.</p></article>
-  <article class="card"><h2>선택형 데이터 수집</h2><p>동의한 경우에만 한국어 퀘스트 문장을 익명으로 보냅니다.</p></article>
+  <article class="card"><h2>간단한 ZIP 설치</h2><p>압축을 풀어 WoW의 _classic_beta_\Interface\AddOns 폴더에 넣으면 됩니다.</p></article>
+  <article class="card"><h2>실행 파일 없음</h2><p>ZIP 배포본에는 업데이터나 백그라운드 수집 프로그램이 포함되지 않습니다.</p></article>
 </section>
-<section class="privacy"><h2>수집하는 정보</h2><p>데이터 수집에 동의하면 퀘스트 ID, 제목, 본문, 구간, 게임 빌드와 애드온 버전만 전송합니다. 캐릭터명, 계정명, 채팅 내용은 전송하지 않습니다. 수집 동의 여부는 설치할 때 선택할 수 있습니다.</p></section>
+<section class="privacy"><h2>설치 및 업데이트</h2><p>ZIP 안의 WoWQuestVoice 폴더를 World of Warcraft\_classic_beta_\Interface\AddOns 안에 복사하세요. 새 버전은 같은 위치에 덮어쓰면 됩니다. ZIP 배포본은 외부로 데이터를 전송하지 않습니다.</p></section>
 <footer>WoWQuestVoice · World of Warcraft는 Blizzard Entertainment의 상표입니다.</footer>
 </main></body></html>`);
 }
 
-async function downloadInstaller(env) {
-  const object = await env.AUDIO.get(INSTALLER_KEY);
-  if (!object) return json({ ok: false, error: "installer_not_ready" }, 404);
+async function downloadArchive(env) {
+  const object = await env.AUDIO.get(DOWNLOAD_KEY);
+  if (!object) return json({ ok: false, error: "download_not_ready" }, 404);
   const headers = new Headers();
   object.writeHttpMetadata(headers);
-  headers.set("content-type", "application/vnd.microsoft.portable-executable");
-  headers.set("content-disposition", 'attachment; filename="WoWQuestVoiceSetup.exe"');
+  headers.set("content-type", "application/zip");
+  headers.set("content-disposition", `attachment; filename="${DOWNLOAD_FILENAME}"`);
   headers.set("content-length", String(object.size));
   headers.set("cache-control", "public, max-age=300");
   return new Response(object.body, { headers });
@@ -300,7 +301,7 @@ export default {
       return landingPage(env);
     }
     if (request.method === "GET" && url.pathname === "/download") {
-      return downloadInstaller(env);
+      return downloadArchive(env);
     }
     if (request.method === "GET" && url.pathname === "/health") {
       return json({ ok: true, service: "WoWQuestVoice Collector", schemaVersion: 1, audioUpdates: true });

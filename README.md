@@ -4,18 +4,18 @@
 
 WoWQuestVoice는 World of Warcraft Classic Beta의 한국어 퀘스트 본문을 게임 안에서 음성으로 재생하는 애드온입니다. 퀘스트 창의 재생·정지 버튼, 재생 중 음악과 효과음 볼륨 조정, 퀘스트 자동 수락·보고 선택 기능을 제공합니다.
 
-Windows 설치 프로그램은 애드온과 백그라운드 업데이터만 포함합니다. 약 316MB의 음성 데이터는 첫 실행 뒤 두 묶음으로 내려받고, 이후에는 바뀐 묶음만 업데이트합니다.
+현재 공개 베타는 실행 파일이 없는 애드온 ZIP으로 배포합니다. ZIP에는 애드온과 생성된 한국어 음성 파일이 모두 들어 있으며, 백그라운드 업데이터나 데이터 전송 프로그램은 포함되지 않습니다.
 
 ## 설치
 
-1. [공식 다운로드 페이지](https://wowquestvoice-collector.wowquestvoice-ko.workers.dev/)에서 설치 프로그램을 받습니다.
-2. 설치 프로그램에서 `_classic_beta_` 폴더를 선택합니다.
-3. 자동 업데이트와 익명 퀘스트 문장 수집 여부를 선택합니다. 문장 수집은 기본적으로 꺼져 있습니다.
+1. [공식 다운로드 페이지](https://wowquestvoice-collector.wowquestvoice-ko.workers.dev/)에서 애드온 ZIP을 받습니다.
+2. ZIP 안의 `WoWQuestVoice` 폴더를 `World of Warcraft\_classic_beta_\Interface\AddOns` 안에 복사합니다.
+3. `AddOns\WoWQuestVoice\WoWQuestVoice.toc`가 바로 보이는지 확인합니다. `WoWQuestVoice\WoWQuestVoice`처럼 폴더가 겹치면 안 됩니다.
 4. 게임에서 `/reload`를 실행하거나 다시 접속합니다.
 
-공개 설치 프로그램에는 서버 비밀키를 포함하지 않습니다. 수집 서버는 요청 형식과 크기를 검사하고, 원본 IP를 저장하지 않는 날짜별 익명 제한값으로 비정상적인 대량 전송을 차단합니다.
+업데이트할 때는 새 ZIP의 `WoWQuestVoice` 폴더를 같은 위치에 덮어쓰면 됩니다. ZIP 배포본에는 EXE와 DLL이 없으며 외부로 퀘스트 데이터를 전송하지 않습니다.
 
-프로그램 제거는 Windows의 **설치된 앱**에서 WoWQuestVoice를 선택하면 됩니다.
+제거하려면 `Interface\AddOns\WoWQuestVoice` 폴더를 삭제합니다.
 
 ## 개인정보
 

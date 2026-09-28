@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## Title: WoWQuestVoice
 ## Notes: Korean quest voiceover with resumable offline voice generation. /wqv
-## Version: 0.10.4
+## Version: 0.10.5
 ## SavedVariables: WoWQuestVoiceDB
 
 ForeverQuestIDs.lua

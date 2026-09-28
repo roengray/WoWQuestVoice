@@ -197,6 +197,12 @@ WoWQuestVoiceQuestAudio = {
             duration = 20.655,
         },
     },
+    [38] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\38_accept.ogg",
+            duration = 12.582,
+        },
+    },
     [39] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\39_accept.ogg",
@@ -621,6 +627,12 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\116_accept.ogg",
             duration = 38.691,
+        },
+    },
+    [117] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\117_accept.ogg",
+            duration = 12.073,
         },
     },
     [118] = {
@@ -1316,7 +1328,7 @@ WoWQuestVoiceQuestAudio = {
     [237] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\237_accept.ogg",
-            duration = 37.164,
+            duration = 35.709,
         },
     },
     [238] = {
@@ -2282,7 +2294,7 @@ WoWQuestVoiceQuestAudio = {
     [418] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\00000-00999\\418_accept.ogg",
-            duration = 38.682,
+            duration = 42.318,
         },
     },
     [419] = {
@@ -8585,6 +8597,30 @@ WoWQuestVoiceQuestAudio = {
             duration = 38.509,
         },
     },
+    [91282] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91282_accept.ogg",
+            duration = 34.182,
+        },
+    },
+    [91294] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91294_accept.ogg",
+            duration = 23.491,
+        },
+    },
+    [91316] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91316_accept.ogg",
+            duration = 31.782,
+        },
+    },
+    [91317] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91317_accept.ogg",
+            duration = 39.855,
+        },
+    },
     [91723] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91723_accept.ogg",
@@ -8669,6 +8705,18 @@ WoWQuestVoiceQuestAudio = {
             duration = 34.109,
         },
     },
+    [91920] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91920_accept.ogg",
+            duration = 34.582,
+        },
+    },
+    [91921] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\91000-91999\\91921_accept.ogg",
+            duration = 13.600,
+        },
+    },
     [92124] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92124_accept.ogg",
@@ -8685,6 +8733,12 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92461_accept.ogg",
             duration = 36.764,
+        },
+    },
+    [92462] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92462_accept.ogg",
+            duration = 15.200,
         },
     },
     [92463] = {
@@ -8879,6 +8933,42 @@ WoWQuestVoiceQuestAudio = {
             duration = 31.927,
         },
     },
+    [92640] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92640_accept.ogg",
+            duration = 25.236,
+        },
+    },
+    [92642] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92642_accept.ogg",
+            duration = 44.036,
+        },
+    },
+    [92643] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92643_accept.ogg",
+            duration = 39.782,
+        },
+    },
+    [92644] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92644_accept.ogg",
+            duration = 17.964,
+        },
+    },
+    [92645] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92645_accept.ogg",
+            duration = 44.764,
+        },
+    },
+    [92646] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92646_accept.ogg",
+            duration = 28.145,
+        },
+    },
     [92679] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92679_accept.ogg",
@@ -8945,10 +9035,70 @@ WoWQuestVoiceQuestAudio = {
             duration = 37.782,
         },
     },
+    [92708] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92708_accept.ogg",
+            duration = 28.509,
+        },
+    },
+    [92709] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92709_accept.ogg",
+            duration = 26.545,
+        },
+    },
     [92727] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92727_accept.ogg",
             duration = 38.000,
+        },
+    },
+    [92741] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92741_accept.ogg",
+            duration = 33.818,
+        },
+    },
+    [92742] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92742_accept.ogg",
+            duration = 16.145,
+        },
+    },
+    [92744] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92744_accept.ogg",
+            duration = 28.509,
+        },
+    },
+    [92745] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92745_accept.ogg",
+            duration = 32.073,
+        },
+    },
+    [92747] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92747_accept.ogg",
+            duration = 27.345,
+        },
+    },
+    [92749] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92749_accept.ogg",
+            duration = 6.182,
+        },
+    },
+    [92834] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92834_accept.ogg",
+            duration = 47.091,
+        },
+    },
+    [92840] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92840_accept.ogg",
+            duration = 34.764,
         },
     },
     [92849] = {
@@ -8963,10 +9113,82 @@ WoWQuestVoiceQuestAudio = {
             duration = 44.327,
         },
     },
+    [92860] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92860_accept.ogg",
+            duration = 38.982,
+        },
+    },
+    [92871] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92871_accept.ogg",
+            duration = 34.691,
+        },
+    },
+    [92880] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92880_accept.ogg",
+            duration = 30.982,
+        },
+    },
+    [92881] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92881_accept.ogg",
+            duration = 26.327,
+        },
+    },
+    [92947] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\92000-92999\\92947_accept.ogg",
+            duration = 36.655,
+        },
+    },
     [93036] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93036_accept.ogg",
             duration = 33.745,
+        },
+    },
+    [93065] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93065_accept.ogg",
+            duration = 15.564,
+        },
+    },
+    [93089] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93089_accept.ogg",
+            duration = 36.364,
+        },
+    },
+    [93090] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93090_accept.ogg",
+            duration = 32.145,
+        },
+    },
+    [93159] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93159_accept.ogg",
+            duration = 22.909,
+        },
+    },
+    [93160] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93160_accept.ogg",
+            duration = 33.309,
+        },
+    },
+    [93165] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93165_accept.ogg",
+            duration = 23.564,
+        },
+    },
+    [93172] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93172_accept.ogg",
+            duration = 38.727,
         },
     },
     [93317] = {
@@ -8987,10 +9209,28 @@ WoWQuestVoiceQuestAudio = {
             duration = 31.927,
         },
     },
+    [93320] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93320_accept.ogg",
+            duration = 33.018,
+        },
+    },
+    [93459] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93459_accept.ogg",
+            duration = 43.018,
+        },
+    },
     [93461] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93461_accept.ogg",
             duration = 37.673,
+        },
+    },
+    [93552] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93552_accept.ogg",
+            duration = 39.782,
         },
     },
     [93735] = {
@@ -9017,6 +9257,18 @@ WoWQuestVoiceQuestAudio = {
             duration = 36.327,
         },
     },
+    [93739] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93739_accept.ogg",
+            duration = 23.055,
+        },
+    },
+    [93740] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93740_accept.ogg",
+            duration = 31.200,
+        },
+    },
     [93746] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93746_accept.ogg",
@@ -9035,6 +9287,18 @@ WoWQuestVoiceQuestAudio = {
             duration = 42.109,
         },
     },
+    [93835] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93835_accept.ogg",
+            duration = 28.873,
+        },
+    },
+    [93836] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93836_accept.ogg",
+            duration = 36.473,
+        },
+    },
     [93926] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93926_accept.ogg",
@@ -9047,10 +9311,22 @@ WoWQuestVoiceQuestAudio = {
             duration = 11.855,
         },
     },
+    [93928] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93928_accept.ogg",
+            duration = 4.000,
+        },
+    },
     [93948] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93948_accept.ogg",
             duration = 39.200,
+        },
+    },
+    [93949] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93949_accept.ogg",
+            duration = 39.782,
         },
     },
     [93951] = {
@@ -9059,10 +9335,58 @@ WoWQuestVoiceQuestAudio = {
             duration = 34.255,
         },
     },
+    [93958] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93958_accept.ogg",
+            duration = 23.418,
+        },
+    },
+    [93963] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\93000-93999\\93963_accept.ogg",
+            duration = 21.527,
+        },
+    },
     [94003] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94003_accept.ogg",
             duration = 45.927,
+        },
+    },
+    [94006] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94006_accept.ogg",
+            duration = 41.200,
+        },
+    },
+    [94007] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94007_accept.ogg",
+            duration = 19.855,
+        },
+    },
+    [94013] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94013_accept.ogg",
+            duration = 30.836,
+        },
+    },
+    [94050] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94050_accept.ogg",
+            duration = 19.855,
+        },
+    },
+    [94369] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94369_accept.ogg",
+            duration = 39.236,
+        },
+    },
+    [94373] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94373_accept.ogg",
+            duration = 42.145,
         },
     },
     [94374] = {
@@ -9083,10 +9407,262 @@ WoWQuestVoiceQuestAudio = {
             duration = 35.200,
         },
     },
+    [94413] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94413_accept.ogg",
+            duration = 34.945,
+        },
+    },
+    [94414] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94414_accept.ogg",
+            duration = 38.400,
+        },
+    },
+    [94427] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94427_accept.ogg",
+            duration = 32.655,
+        },
+    },
+    [94434] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94434_accept.ogg",
+            duration = 40.655,
+        },
+    },
+    [94435] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94435_accept.ogg",
+            duration = 16.436,
+        },
+    },
+    [94436] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94436_accept.ogg",
+            duration = 44.545,
+        },
+    },
+    [94438] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94438_accept.ogg",
+            duration = 39.455,
+        },
+    },
+    [94440] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94440_accept.ogg",
+            duration = 30.473,
+        },
+    },
+    [94441] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94441_accept.ogg",
+            duration = 30.182,
+        },
+    },
+    [94449] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94449_accept.ogg",
+            duration = 34.473,
+        },
+    },
+    [94465] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94465_accept.ogg",
+            duration = 39.600,
+        },
+    },
+    [94466] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94466_accept.ogg",
+            duration = 34.873,
+        },
+    },
+    [94467] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94467_accept.ogg",
+            duration = 33.018,
+        },
+    },
+    [94468] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94468_accept.ogg",
+            duration = 19.127,
+        },
+    },
     [94472] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94472_accept.ogg",
             duration = 4.727,
+        },
+    },
+    [94484] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94484_accept.ogg",
+            duration = 28.655,
+        },
+    },
+    [94485] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94485_accept.ogg",
+            duration = 38.000,
+        },
+    },
+    [94486] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94486_accept.ogg",
+            duration = 34.036,
+        },
+    },
+    [94487] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94487_accept.ogg",
+            duration = 45.491,
+        },
+    },
+    [94488] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94488_accept.ogg",
+            duration = 24.145,
+        },
+    },
+    [94489] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94489_accept.ogg",
+            duration = 37.236,
+        },
+    },
+    [94490] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94490_accept.ogg",
+            duration = 15.418,
+        },
+    },
+    [94491] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94491_accept.ogg",
+            duration = 34.727,
+        },
+    },
+    [94568] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94568_accept.ogg",
+            duration = 21.818,
+        },
+    },
+    [94638] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94638_accept.ogg",
+            duration = 39.600,
+        },
+    },
+    [94774] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94774_accept.ogg",
+            duration = 27.927,
+        },
+    },
+    [94824] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94824_accept.ogg",
+            duration = 32.291,
+        },
+    },
+    [94896] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94896_accept.ogg",
+            duration = 39.491,
+        },
+    },
+    [94897] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94897_accept.ogg",
+            duration = 35.127,
+        },
+    },
+    [94946] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94946_accept.ogg",
+            duration = 34.500,
+        },
+    },
+    [94947] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94947_accept.ogg",
+            duration = 42.727,
+        },
+    },
+    [94978] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94978_accept.ogg",
+            duration = 25.455,
+        },
+    },
+    [94979] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\94000-94999\\94979_accept.ogg",
+            duration = 28.509,
+        },
+    },
+    [95041] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95041_accept.ogg",
+            duration = 41.345,
+        },
+    },
+    [95065] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95065_accept.ogg",
+            duration = 44.327,
+        },
+    },
+    [95212] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95212_accept.ogg",
+            duration = 22.109,
+        },
+    },
+    [95213] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95213_accept.ogg",
+            duration = 21.309,
+        },
+    },
+    [95214] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95214_accept.ogg",
+            duration = 15.055,
+        },
+    },
+    [95314] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95314_accept.ogg",
+            duration = 32.291,
+        },
+    },
+    [95349] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95349_accept.ogg",
+            duration = 38.400,
+        },
+    },
+    [95350] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95350_accept.ogg",
+            duration = 37.418,
+        },
+    },
+    [95803] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95803_accept.ogg",
+            duration = 23.491,
+        },
+    },
+    [95998] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\95000-95999\\95998_accept.ogg",
+            duration = 37.182,
         },
     },
     [96031] = {
@@ -9141,6 +9717,48 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96101_accept.ogg",
             duration = 34.909,
+        },
+    },
+    [96390] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96390_accept.ogg",
+            duration = 18.982,
+        },
+    },
+    [96391] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96391_accept.ogg",
+            duration = 35.564,
+        },
+    },
+    [96392] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96392_accept.ogg",
+            duration = 24.436,
+        },
+    },
+    [96393] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96393_accept.ogg",
+            duration = 32.945,
+        },
+    },
+    [96394] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96394_accept.ogg",
+            duration = 24.800,
+        },
+    },
+    [96403] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96403_accept.ogg",
+            duration = 35.200,
+        },
+    },
+    [96408] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96408_accept.ogg",
+            duration = 25.891,
         },
     },
     [96604] = {
@@ -9215,10 +9833,82 @@ WoWQuestVoiceQuestAudio = {
             duration = 17.236,
         },
     },
+    [96875] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96875_accept.ogg",
+            duration = 26.764,
+        },
+    },
+    [96895] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96895_accept.ogg",
+            duration = 35.927,
+        },
+    },
+    [96896] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96896_accept.ogg",
+            duration = 35.564,
+        },
+    },
+    [96897] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96897_accept.ogg",
+            duration = 18.473,
+        },
+    },
+    [96898] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96898_accept.ogg",
+            duration = 36.073,
+        },
+    },
+    [96899] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\96000-96999\\96899_accept.ogg",
+            duration = 33.673,
+        },
+    },
+    [97222] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97222_accept.ogg",
+            duration = 30.691,
+        },
+    },
     [97223] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97223_accept.ogg",
             duration = 30.327,
+        },
+    },
+    [97242] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97242_accept.ogg",
+            duration = 37.564,
+        },
+    },
+    [97243] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97243_accept.ogg",
+            duration = 42.109,
+        },
+    },
+    [97244] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97244_accept.ogg",
+            duration = 35.491,
+        },
+    },
+    [97245] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97245_accept.ogg",
+            duration = 40.436,
+        },
+    },
+    [97257] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97257_accept.ogg",
+            duration = 36.145,
         },
     },
     [97263] = {
@@ -9237,6 +9927,24 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97279_accept.ogg",
             duration = 36.800,
+        },
+    },
+    [97326] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97326_accept.ogg",
+            duration = 27.127,
+        },
+    },
+    [97558] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97558_accept.ogg",
+            duration = 41.345,
+        },
+    },
+    [97891] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97891_accept.ogg",
+            duration = 30.764,
         },
     },
     [97916] = {
@@ -9413,6 +10121,30 @@ WoWQuestVoiceQuestAudio = {
             duration = 31.418,
         },
     },
+    [98021] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98021_accept.ogg",
+            duration = 38.364,
+        },
+    },
+    [98024] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98024_accept.ogg",
+            duration = 36.109,
+        },
+    },
+    [98025] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98025_accept.ogg",
+            duration = 39.418,
+        },
+    },
+    [98067] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98067_accept.ogg",
+            duration = 49.055,
+        },
+    },
     [98284] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97940_accept.ogg",
@@ -9423,6 +10155,12 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\97000-97999\\97940_accept.ogg",
             duration = 24.145,
+        },
+    },
+    [98298] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98298_accept.ogg",
+            duration = 47.964,
         },
     },
     [98319] = {
@@ -9461,6 +10199,18 @@ WoWQuestVoiceQuestAudio = {
             duration = 53.636,
         },
     },
+    [98512] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98512_accept.ogg",
+            duration = 27.782,
+        },
+    },
+    [98545] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98545_accept.ogg",
+            duration = 29.309,
+        },
+    },
     [98574] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98574_accept.ogg",
@@ -9477,6 +10227,18 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\98000-98999\\98601_accept.ogg",
             duration = 21.891,
+        },
+    },
+    [99051] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99051_accept.ogg",
+            duration = 23.418,
+        },
+    },
+    [99052] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99052_accept.ogg",
+            duration = 29.818,
         },
     },
     [99127] = {
@@ -9515,6 +10277,12 @@ WoWQuestVoiceQuestAudio = {
             duration = 37.709,
         },
     },
+    [99142] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99142_accept.ogg",
+            duration = 39.273,
+        },
+    },
     [99143] = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99143_accept.ogg",
@@ -9525,6 +10293,24 @@ WoWQuestVoiceQuestAudio = {
         accept = {
             path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99144_accept.ogg",
             duration = 45.055,
+        },
+    },
+    [99152] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99152_accept.ogg",
+            duration = 40.291,
+        },
+    },
+    [99153] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99153_accept.ogg",
+            duration = 34.909,
+        },
+    },
+    [99156] = {
+        accept = {
+            path = "Interface\\AddOns\\WoWQuestVoice\\sounds\\99000-99999\\99156_accept.ogg",
+            duration = 38.655,
         },
     },
     [99158] = {
