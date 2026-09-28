@@ -3,10 +3,9 @@ const MAX_RECORDS = 100;
 const PUBLIC_REQUESTS_PER_DAY = 500;
 const PUBLIC_RECORDS_PER_DAY = 20000;
 const VALID_SECTIONS = new Set(["accept", "progress", "complete"]);
-const DOWNLOAD_KEY = "releases/WoWQuestVoice-v0.10.5-addon.zip";
-const DOWNLOAD_FILENAME = "WoWQuestVoice-v0.10.5-addon.zip";
 const DOWNLOAD_VERSION = "0.10.5";
 const DOWNLOAD_SHA256 = "2832437ABDB156F5CBBA8B1B0F49BD272D178FE88EB7E7649F971EB69CEC0F8C";
+const DOWNLOAD_URL = "https://github.com/roengray/WoWQuestVoice/releases/download/v0.10.5/WoWQuestVoice-v0.10.5-addon.zip";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -31,13 +30,8 @@ function html(body, status = 200) {
 }
 
 async function landingPage(env) {
-  const archive = await env.AUDIO.head(DOWNLOAD_KEY);
-  const download = archive
-    ? `<a class="button" href="/download?v=${DOWNLOAD_VERSION}">애드온 ZIP 다운로드</a>`
-    : '<span class="button disabled">ZIP 파일 준비 중</span>';
-  const downloadNote = archive
-    ? `애드온 전체 ZIP v${DOWNLOAD_VERSION} · ${(archive.size / 1024 / 1024).toFixed(1)}MB · 실행 파일 없음 · 음성 1,639개 포함<br>SHA-256: <code>${DOWNLOAD_SHA256}</code>`
-    : "애드온 ZIP 파일을 준비하고 있습니다.";
+  const download = `<a class="button" href="${DOWNLOAD_URL}">애드온 ZIP 다운로드</a>`;
+  const downloadNote = `애드온 전체 ZIP v${DOWNLOAD_VERSION} · 343.2MB · 실행 파일 없음 · 음성 1,639개 포함<br>SHA-256: <code>${DOWNLOAD_SHA256}</code>`;
   return html(`<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WoWQuestVoice</title><meta name="description" content="월드 오브 워크래프트 한국어 퀘스트 음성 애드온">
@@ -58,15 +52,7 @@ async function landingPage(env) {
 }
 
 async function downloadArchive(env) {
-  const object = await env.AUDIO.get(DOWNLOAD_KEY);
-  if (!object) return json({ ok: false, error: "download_not_ready" }, 404);
-  const headers = new Headers();
-  object.writeHttpMetadata(headers);
-  headers.set("content-type", "application/zip");
-  headers.set("content-disposition", `attachment; filename="${DOWNLOAD_FILENAME}"`);
-  headers.set("content-length", String(object.size));
-  headers.set("cache-control", "public, max-age=300");
-  return new Response(object.body, { headers });
+  return Response.redirect(DOWNLOAD_URL, 302);
 }
 
 function bearerToken(request) {
